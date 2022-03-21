@@ -28,26 +28,26 @@
 
         let currentTab = '';
         webButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "https://www.univ-smb.fr");
+          text.setAttribute("value", "https://softmind.tech");
           currentTab = 'web';
         });
         emailButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "FabLabIEAP@");
+          text.setAttribute("value", "hello@softmind.tech");
           currentTab = 'email';
         });
         profileButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "FabLab Master IEAP");
+          text.setAttribute("value", "AR, VR solutions and consultation");
           currentTab = 'profile';
         });
         locationButton.addEventListener('click', function (evt) {
           console.log("loc");
-          text.setAttribute("value", "USMB University - Chambery 73000");
+          text.setAttribute("value", "Vancouver, Canada | Hong Kong");
           currentTab = 'location';
         });
 
         text.addEventListener('click', function (evt) {
           if (currentTab === 'web') {
-            window.location.href="https://www.univ-smb.fr";
+            window.location.href="https://softmind.tech";
           }
         });
       }
@@ -221,12 +221,12 @@
     <div class="example-container">
       <div id="example-scanning-overlay" class="hidden">
 	<div class="inner">
-	  <img src="./icons/card.png"/>
+	  <img src="./assets/card-example/card.png"/>
 	  <div class="scanline"></div>
 	</div>
       </div>
 
-      <a-scene mindar-image="imageTargetSrc: ./targets_6.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-scene mindar-image="imageTargetSrc: targets_6.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
           <img id="card" src="./icons/card.png" />
           <img id="icon-web" src="./icons/web.png" />
@@ -234,23 +234,23 @@
           <img id="icon-profile" src="./icons/profile.png" />
           <img id="icon-phone" src="./icons/phone.png" />
           <img id="icon-email" src="./icons/email.png" />
-          <img id="icon-play" src="./icons/play.png" />
-          <img id="icon-left" src="./icons/left.png" />
-          <img id="icon-right" src="./icons/right.png" />
+          <img id="icon-play" src="./play.png" />
+          <img id="icon-left" src="./left.png" />
+          <img id="icon-right" src="./right.png" />
           <img id="paintandquest-preview" src="./assets/card-example/portfolio/paintandquest-preview.png" />
           <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="./assets/card-example/portfolio/paintandquest.mp4"></video>
           <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./assets/card-example/portfolio/paintandquest.webm"></video>
           <img id="coffeemachine-preview" src="./assets/card-example/portfolio/coffeemachine-preview.png" />
           <img id="peak-preview" src="./assets/card-example/portfolio/peak-preview.png" />
           
-          <a-asset-item id="avatarModel" src="USMB_Fablab2.glb"></a-asset-item>
+          <a-asset-item id="avatarModel" src="./USMB_Fablab2.gltf"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
         </a-camera>
 
         <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
-    		<a-plane src="#card" position="0 0 0" height="1" width="0.88" rotation="0 0 0"></a-plane>
+          <a-plane src="#card" position="0 0 0" height="1" width="0.88" rotation="0 0 0"></a-plane>
 
           <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
             <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0"></a-text>
@@ -288,8 +288,7 @@
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
-          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.009 0.009 0.009" src="#avatarModel"
-><a-gltf-model>
+          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model>
 
           <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
         </a-entity>
